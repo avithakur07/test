@@ -1,0 +1,36 @@
+//Option 1
+
+fun main() {
+   val array1 = arrayOf("goat", "fish", "deer", "goat", "bear")
+   val array2 = arrayOf("ant", "bear", "goat")
+    solve(array1,array2)
+}
+fun <T> solve(arr: Array<T>,arrr: Array<T>) {
+     val result = mutableSetOf<T>()
+     val set = mutableSetOf<T>()
+     for (element in arr) {
+         if (!set.add(element)) {
+            continue
+         }
+         // println(element)  
+        for (other in arrr) {
+            if (element != other) {
+                result.add(element)
+                println(element)
+                break
+             }
+         }
+        
+    }
+    
+}
+
+Optiop 2-
+fun solve() {
+   val array1 = arrayOf("goat", "fish", "deer", "goat", "bear")
+   val array2 = arrayOf("ant", "bear", "goat")
+ // val array1 = arrayOf(1, 2, 3, 4, 5, 5)
+   //val array2 = arrayOf(4, 5, 6, 7, 8, 8)
+   val result = (array1 + array2).distinct().toTypedArray()
+   println(result.contentToString())
+}
